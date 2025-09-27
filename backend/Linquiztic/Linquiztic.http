@@ -1,0 +1,6 @@
+@Linquiztic_HostAddress = http://localhost:5218
+
+GET {{Linquiztic_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
