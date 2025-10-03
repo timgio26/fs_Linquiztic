@@ -1,14 +1,14 @@
 import { Route, Routes } from "react-router";
-import { Homepage,Layout,Profile,ProtectedPage,Auth,NewWords,FlashCard, Word, Quiz, NotFound } from "./Pages/Index";
+import { Layout,Profile,Homepage,ProtectedPage,Auth,NewWords,FlashCard, Word, Quiz, NotFound } from "./Pages/Index";
 
 export default function App() {
   return (
+
     <Routes>
       <Route>
         <Route element={<Layout/>}>
-          <Route path="auth" element={<Auth/>}/>
-
           <Route index element={<ProtectedPage><Homepage/></ProtectedPage>}/>
+          <Route path="auth" element={<Auth/>}/>
           <Route path="profile" element={<ProtectedPage><Profile/></ProtectedPage>}/>
 
           <Route path="flashcard">
@@ -18,7 +18,7 @@ export default function App() {
             <Route path="word" element={<ProtectedPage><Word /></ProtectedPage>} />
           </Route>
 
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<NotFound/>} />
 
         </Route>
       </Route>
