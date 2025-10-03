@@ -37,6 +37,10 @@ builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
+using var scope = app.Services.CreateScope();
+var db = scope.ServiceProvider.GetRequiredService<MyDbContext>();
+db.Database.Migrate(); // Applies migrations at runtime
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
