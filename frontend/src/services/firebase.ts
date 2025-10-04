@@ -9,7 +9,7 @@ import {
 import { toast } from "react-toastify";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCy1S5NbRtThG4_z5pPtkHZFvlwRRUm5v4",
+  apiKey:import.meta.env.VITE_FIREBASE_KEY,
   authDomain: "ciao-bella-1505a.firebaseapp.com",
   databaseURL: "https://ciao-bella-1505a-default-rtdb.firebaseio.com",
   projectId: "ciao-bella-1505a",
