@@ -16,7 +16,8 @@ builder.Services.AddOpenApi();
 //for ai
 builder.Services.AddSingleton<AIService>();
 
-builder.Services.AddDbContext<MyDbContext>(options => options.UseSqlite("Data Source=myLocalDb.db"));
+// builder.Services.AddDbContext<MyDbContext>(options => options.UseSqlite("Data Source=myLocalDb.db"));
+builder.Services.AddDbContext<MyDbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {

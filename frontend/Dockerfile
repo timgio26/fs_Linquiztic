@@ -5,6 +5,7 @@ RUN npm install
 COPY . .
 
 ARG VITE_AI_KEY
+ARG VITE_FIREBASE_KEY
 # ENV VITE_AI_KEY=$VITE_AI_KEY
 # ENV VITE_AI_KEY=secretvalue
 RUN npm run build

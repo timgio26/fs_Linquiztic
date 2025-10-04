@@ -28,6 +28,7 @@ export function Auth() {
         toast.success("register success please signin");
         setIsLogin(true);
       } else {
+        toast.error("cant register, try again later");
         await deleteUser(resp.user);
       }
     }
